@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <form action="/galerie.html">
+        <input type="file" id="myFile" name="filename">
+        <input type="button" value="ajouter" onclick="GAL.ajouterImage(document.getElementById('myFile'))">
+    <script>console.log(document.getElementById('myFile'))</script>
+    </form>
+    <div id="block" style="border: 1px solid red; width: 300px; height: 100px;">    
+    </div>
+    
+    <script>
+        class Galerie {
+            // Définition du constructeur de la classe Galerie
+            constructor(conteneur) {
+                this.conteneur = conteneur;
+                this.urlImages = [];
+            }
+    
+            // Cette méthode permet d'ajouter une image à cette galerie
+            ajouterImage(fileInput) {
+                const file = fileInput.files[0];  // Récupère le fichier sélectionné
+                if (file) {
+                    const imageUrl = URL.createObjectURL(file);  // Crée une URL de l'image
+                    console.log(imageUrl)
+                    this.urlImages.push(imageUrl);  // Ajoute l'URL à la liste des images
+                    this.regenerer();  // Regénère la galerie pour afficher l'image
+                } else {
+                    alert("Please select a file.");
+                }
+            }
+    
+            // Cette méthode permet de générer et d'afficher cette galerie dans la page
+            regenerer() {
+                var html = '';
+                // Génération des éléments <img> dans le conteneur
+                for (var i = 0; i < this.urlImages.length; i++) {
+                    html += '<img src="' + this.urlImages[i] + '" style="width: 100px; height: 100px; margin: 5px;">';
+                }
+    
+                this.conteneur.innerHTML = html;
+            }
+        }
+    
+        // Crée une instance de la galerie et la lie à l'élément 'block'
+        var GAL = new Galerie(document.getElementById("block"));
+    </script>
+    
+</body>
+
+</html>

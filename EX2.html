@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // Objet contenant les noms et numéros de téléphone
+    var annuaire = {
+        "Alice": "123-456-789",
+        "Bob": "987-654-321",
+        "Charlie": "555-555-555",
+        "Diane": "111-222-333"
+    };
+    function r() {
+        nom = prompt("donner le nom du contact a chercher")
+        for (var name in annuaire) {
+            if (name == nom) {
+                break;
+                
+            } 
+
+        }
+        if (name == nom) {
+               
+            alert('Nom: ' + nom + '\nNumero: ' + annuaire[nom])
+            }
+            else{
+                alert("contact introuvable")
+            }
+    }
+    function l() {
+        ch = ""
+        for (var name in annuaire) {
+            ch += "Nom: " + name + " Numero: " + annuaire[name] + "\n"
+        }
+        alert(ch)
+    }
+    function a() {
+        name = prompt("donner le nom du contact")
+        numero = prompt("donnez le numero du contact")
+        annuaire[name] = numero
+    }
+    function s() {
+        supp = prompt("donnez le numero a supprimer")
+        delete annuaire[supp]
+    }
+    while (true) {
+        rep = prompt("•'r' pour rechercher\n• 'l' pour afficher la liste\n• 'a' pour ajouter\n• et 's' pour supprimer.")
+        switch (rep) {
+            case 'r':
+                r();
+                break;
+            case 'l':
+                l();
+                break;
+            case 'a':
+                a();
+                break;
+            case 's':
+                s();
+                break;
+            default:
+                alert("choix invalide!");
+        }
+
+    }
+</script>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPS</title>
+</head><body>    <h1>Géolocalisation d'un Lieu</h1>
+    <input type="text" id="place" placeholder="Entrez un lieu" />
+    <button onclick="getLocation()">Trouver</button>
+    <div id="location"></div>
+    <script>
+        function getLocation() {
+            const place = document.getElementById('place').value;
+            fetch(`https://nominatim.openstreetmap.org/search?q=${place}&format=json`)
+                .then(response => response.json())
+                .then(data=>{
+                    console.log(data);
+                })        }    </script></body></html>

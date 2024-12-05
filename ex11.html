@@ -1,0 +1,6 @@
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://jsonplaceholder.typicode.com/users/1');
+xhr.onreadystatechange = function() {
+console.log('état:', xhr.readyState, '-> réponse:', xhr.responseText);
+};
+xhr.send();

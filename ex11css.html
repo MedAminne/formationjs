@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .hidden {
+        display: none;
+    }
+</style>
+
+<body>
+    <button id="toggleButton">cacher les images</button>
+    <button id="afficher">afficher les images</button>
+    <article>
+        <h2>Titre 1</h2>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <img class="photo" src="./images/tunisia2.jpg" width="100px" alt="" srcset="">
+    </article>
+    <article>
+        <h2>Titre 2</h2>
+        <p>Lorem ipsum dolor sit amet consectetur.</p>
+        <img class="photo" src="./images/tunisia2.jpg" width="100px" alt="" srcset="">
+    </article>
+    <script>
+        document.getElementById('afficher').addEventListener('click',
+            function () {
+                var secondParagraph = document.getElementsByClassName('photo');
+                for (let i = 0; i < secondParagraph.length; i++) {
+                    secondParagraph[i].classList.remove("hidden")
+                }
+                
+
+
+            });
+        document.getElementById('toggleButton').addEventListener('click',
+            function () {
+                var secondParagraph = document.getElementsByClassName('photo');
+                for (let i = 0; i < secondParagraph.length; i++) {
+                    secondParagraph[i].classList.add("hidden")
+                }
+
+
+
+            });
+    </script>
+</body>
+
+</html>

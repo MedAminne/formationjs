@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>class Compteur {
+            constructor() {
+                this.valeur = 0;
+            }
+            incrementer() {
+                this.valeur++;
+            }
+            decrementer() {
+                this.valeur--;
+            }
+            incrementer(n) {
+                this.valeur+=n;
+            }
+            decrementer(n) {
+                this.valeur-=n;
+            }
+            reset() {
+                this.valeur = 0;
+            }
+            afficher() {
+                return `Valeur actuelle : ${this.valeur}`;
+            }
+        }
+        // Exemple d'utilisation
+        const compteur = new Compteur();
+        
+    </script>
+</body>
+
+</html>

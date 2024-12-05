@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtrage par catégorie</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <button class="filter" data-category="ludique" id="ludique">Ludique</button>
+    <button class="filter" data-category="pratique" id="pratique">Pratique</button>
+    <button class="filter" data-category="sportif" id="sportif">Sportif</button>
+    <button class="filter" data-category="all" id="all">Tous</button>
+    <article class="ludique pratique">iPad</article>
+    <article class="ludique sportif">Batte de baseball</article>
+    <article class="pratique">Ventilateur</article>
+    <article class="sportif">Tennis</article>
+    <article class="ludique">Jeu vidéo</article>
+    <article class="pratique">Sac à dos</article>
+    <article class="ludique sportif">Skateboard</article>
+    <article class="pratique">Montre connectée</article>
+    <article class="ludique">Puzzle</article>
+    <article class="sportif">Vélo</article>
+    <script> 
+    document.getElementById('ludique').addEventListener('click', function () {
+           document.querySelectorAll('article').forEach(function (article) {
+               if (!article.classList.contains('ludique')) {
+                  article.style.display="none"
+               }else{
+                article.style.display=null
+               }
+
+           });
+       });
+       document.getElementById('pratique').addEventListener('click', function () {
+           document.querySelectorAll('article').forEach(function (article) {
+               if (!article.classList.contains('pratique')) {
+                  article.style.display="none"
+               }else{
+                article.style.display=null
+               }
+               
+           });
+       });
+       document.getElementById('sportif').addEventListener('click', function () {
+           document.querySelectorAll('article').forEach(function (article) {
+               if (!article.classList.contains('sportif')) {
+                  article.style.display="none"
+               }else{
+                article.style.display=null
+               }
+               
+           });
+       });
+       document.getElementById('all').addEventListener('click', function () {
+           document.querySelectorAll('article').forEach(function (article) {
+               
+                  article.style.display=null
+               
+               
+           });
+       });
+
+       </script>
+</body>
+
+</html>

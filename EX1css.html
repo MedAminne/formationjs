@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afficher / Cacher</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    .hidden {
+        display: none;
+    }
+</style>
+
+<body>
+    <p id="premier">Texte visible</p>
+    <p id="second" class="hidden">Texte caché</p>
+    <button id="toggleButton">Afficher le texte caché</button>
+    <script>
+        document.getElementById('toggleButton').addEventListener('click',
+            function () {
+                var secondParagraph = document.getElementById('second');
+                
+                secondParagraph.classList.remove('hidden');
+            });
+    </script>
+</body>
+
+</html>

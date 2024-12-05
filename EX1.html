@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+
+
+    <script>
+        /*  nom=prompt("donner votre nom");
+             alert(`bonjour ${nom} bienvini`); */
+        /*  let num1 = Number(prompt("Entrez le premier nombre :"));
+         let num2 = Number(prompt("Entrez le deuxième nombre :"));
+         console.log(`Somme : ${num1 + num2}`);
+         console.log(`Produit : ${num1 * num2}`);
+         console.log(`Différence : ${num1 - num2}`); */
+        /* var saisie = prompt('Que veux-tu dire ?');
+        if (saisie === 'bonjour') {
+            alert('Bonjour à toi !');
+        } else if (saisie === 'tu vas bien ?') {
+            alert('Bien, et toi ?');
+        } else {
+            alert("Je ne comprends pas.");
+        } */
+       /* v=0
+        x=Math.round(Math.random()*100);
+        for(i=1;i<=1;i++){
+            y=prompt("devinez un nombre (tentative: "+i+")")
+            if(x==y){
+                alert("Bravo le nombre est exact :) !")
+                v=1
+                break
+            }else if(y<x){
+                alert("votr nombre < a le nombre exacte")
+            }else {
+                alert("le nombre est >a le nombre vras")
+            }
+        }
+        if(v==0){
+            alert("je suis gagner :P :D")
+        } */
+       liste=["P","F","C"]
+       userS=0
+       ordS=0
+       for(i=1;i<4;i++){
+        x=Math.round(Math.random()*2)
+        user=prompt("Donnez P: pierre,F:feuille,C: caiseau \n scores: "+userS+" - "+ordS)
+        if (user==liste[x]){
+            
+        }else if((user=="C")&(liste[x]=="F")){
+            userS++
+        }else if((user=="F")&(liste[x]=="P")){
+            userS++
+        }else if((user=="P")&(liste[x]=="F")){
+            ordS++
+        }else if((user=="C")&(liste[x]=="P")){
+            ordS++
+        }else if((user=="F")&(liste[x]=="C")){
+            ordS++
+        }else if((user=="P")&(liste[x]=="C")){
+            userS++
+        }
+      
+       }
+       if (userS>ordS){
+        alert("Vous avez gagner:\n vous: "+userS+"- ord:"+ordS)
+       }else if(userS<ordS){
+        alert("vous aver perdus\n vous: "+userS+"- ord :"+ordS)
+       }else{
+        alerte("Egalité\n vous: "+userS+"- ord:"+ordS)
+       }
+
+        </script>
+</body>
+
+</html>
